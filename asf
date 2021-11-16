@@ -1,0 +1,62 @@
+ef print_grade(quiz_grades: list,
+                homework_grades: list,
+                project_grade = float) -> None:
+    """Prints the letter and numerical grade for the course.
+
+    Uses grade_calculator on the inputs to obtain the numerical grade. Checks
+    the numerical grade until it finds the correct range it is placed in.
+    Finally prints the corresponding grade message.
+
+    Args:
+        quiz_grades: A list of grades earned on the quizzes. 
+        homework_grades: A list of grades earned on the homework.
+        project_grade: The numerical grade earned on the final project.
+    
+    Returns:
+        None
+    """
+    grade: float = grade_calculator(quiz_grades,
+                                    homework_grades,
+                                    project_grade)
+    if grade < 60:
+        print("Current grade is an F at " + str(grade) + "%")
+    elif grade < 70:
+        print("Current grade is a D at " + str(grade) + "%")
+    elif grade < 80:
+        print("Current grade is a C at " + str(grade) + "%")
+    elif grade < 90:
+        print("Current grade is a B at " + str(grade) + "%")
+    else:
+        print("Current grade is an A at " + str(grade) + "%")
+    return None
+
+
+
+quiz_grades: list = [20, #Quiz 01
+                     18, #Quiz 02
+                     20, #Quiz 03
+                     20, #Quiz 04
+                     20, #Quiz 05
+                     18, #Quiz 06
+                     20, #Quiz 07
+                     20, #Quiz 08
+                     20, #Quiz 09
+                     20, #Quiz 10
+                     20, #Bonus Quiz 01
+                     0, #Bonus Quiz 02
+                     0] #bonus Quiz 03
+               
+homework_grades: list = [40, #Homework 01
+                         58, #Homework 02
+                         48, #Homework 03
+                         46, #Homework 04
+                         48, #Homework 05
+                         60, #Homework 06
+                         0, #Homework 07
+                         20, #Homework 08
+                         50, #Homework 09
+                         50] #Homework 10
+
+project_grade: float = 80
+
+print_grade(quiz_grades,homework_grades,project_grade)
